@@ -2,10 +2,10 @@
 
 Topics:
 
-* React Router
-* Using Link and NavLink to navigate to specific routes
-* Passing Route Parameters
-* Passing props to components rendered by the Router
+- React Router
+- Using Link and NavLink to navigate to specific routes
+- Passing Route Parameters
+- Passing props to components rendered by the Router
 
 ## Instructions
 
@@ -19,7 +19,7 @@ Topics:
 - [ ] Still inside the `client` folder run `yarn start` to run the client application.
 
 - [ ] Once your application is up and running on the client, you should see a browser window that looks like this at `localhost:3000`
-  ![Movies Home](https://ibin.co/3xhmmHVl9BKF.png)
+      ![Movies Home](https://ibin.co/3xhmmHVl9BKF.png)
 
 ### Part 1:
 
@@ -46,11 +46,12 @@ If you have completed Parts 1 & 2 feel free to move on to these stretch goals.
 
 ### Add `Save Movie` functionality.
 
-- [ ] You will notice there is a 'Saved Movies' component that we are not currently using. In this step you will add the functionality to save a movie. You will need to pass the `addToSavedList` function to the `Movie` component. Once you have done that you will need to add a click handler to the save button. You will need to uncomment lines 24-27 in `Movie.js` to complete this. 
+- [ ] You will notice there is a 'Saved Movies' component that we are not currently using. In this step you will add the functionality to save a movie. You will need to pass the `addToSavedList` function to the `Movie` component. Once you have done that you will need to add a click handler to the save button. You will need to uncomment lines 24-27 in `Movie.js` to complete this.
 
 ### Turn your Saved Movie list into `Link`s.
 
 - [ ] Your list of saved movies should be links to the movie itself. Study and understand what the `saveMovie` function is doing.
 
 ### Turn your Saved Movie `Link`s into `NavLink`s.
+
 - [ ] Navlink
