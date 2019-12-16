@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+// import "../index.css";
+// import MovieCard from "./MovieCard";
 
 const MovieList = props => {
   const [movies, setMovies] = useState([]);
+
   useEffect(() => {
     const getMovies = () => {
       axios
@@ -13,12 +16,12 @@ const MovieList = props => {
           setMovies(res.data);
         })
         .catch(err => {
-          console.err("Server error", err);
+          console.log("Server error", err);
         });
     };
 
     getMovies();
-  }, []);
+  });
 
   return (
     <div className="movie-list">

@@ -1,27 +1,34 @@
 import React, { useState } from "react";
 import { Route } from "react-router-dom";
-//? import { Movie, MovieCard, MovieList, SavedList } from "./index";
-//? import SavedList from "./Movies/index";
-
 import { Movie, MovieList, SavedList } from "./Movies/index";
+import "./index.css";
 
-const App = () => {
+const App = props => {
   const [savedList, setSavedList] = useState([]);
 
   const addToSavedList = movie => {
     setSavedList([...savedList, movie]);
   };
+
   {
     return (
-      <div>
+      <div className="wrapper">
         <SavedList list={savedList} />
-        <Route exact path="/" component={MovieList} />
-        {/* How do I change component to render??? I need to pass in addToSavedList into Movie component to use it to set Save */}
-        {/* <Route path="/movies/:id" component={Movie} /> */}
-        <Route
-          path="./movies/:id"
-          render={props => <Movie {...props} save={addToSavedList} />}
-        />
+
+        <Route path="/" exact>
+          <MovieList />
+        </Route>
+
+        <Route path="/movies/:id">
+          <Movie save={addToSavedList} saveList={savedList} />
+        </Route>
+        {/* <Route path="/" component={MovieList} exact /> */}
+        {/* <Route
+          path="/movies/:id"
+          render={props => (
+            <Movie {...props} save={addToSavedList} saveList={savedList} />
+          )}
+        /> */}
       </div>
     );
   }
