@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import { Route } from "react-router-dom";
 
 const MovieCard = props => {
-  const { title, director, metascore, stars } = movie;
+  const { title, director, metascore, stars } = props.movie;
+
+  let [show, setShow] = useState("save-button");
+
+  props.saveList.forEach(e => {
+    if (e.title == title) {
+      show = "hideBtn";
+    }
+  });
+
   return (
+    // <>
+    //   <div>work in progress..</div>
+    // </>
     <div className="save-wrapper">
       <div className="movie-card">
         <h2>{title}</h2>
@@ -18,7 +31,8 @@ const MovieCard = props => {
             {star}
           </div>
         ))}
-        <button onClick={saveMovie} className={hideBtn}>
+
+        <button onClick={props.saveMovie} className={show}>
           Save
         </button>
       </div>

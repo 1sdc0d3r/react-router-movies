@@ -16,19 +16,12 @@ const App = props => {
         <SavedList list={savedList} />
 
         <Route path="/" exact>
-          <MovieList />
+          <MovieList saveList={savedList} save={addToSavedList} />
         </Route>
 
         <Route path="/movies/:id">
           <Movie save={addToSavedList} saveList={savedList} />
         </Route>
-        {/* <Route path="/" component={MovieList} exact /> */}
-        {/* <Route
-          path="/movies/:id"
-          render={props => (
-            <Movie {...props} save={addToSavedList} saveList={savedList} />
-          )}
-        /> */}
       </div>
     );
   }
