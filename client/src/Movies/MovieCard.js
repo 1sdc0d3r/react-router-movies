@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 
 const MovieCard = props => {
@@ -6,11 +6,15 @@ const MovieCard = props => {
 
   let [show, setShow] = useState("save-button");
 
-  props.saveList.forEach(e => {
-    if (e.title == title) {
+  //* const save = () => {
+  props.saveList.find(e => {
+    if (e.title === title) {
       show = "hideBtn";
+      //! setShow("hideBtn");
     }
   });
+  //* };
+  //* useEffect(() => save(), [saveList]);
 
   return (
     // <>

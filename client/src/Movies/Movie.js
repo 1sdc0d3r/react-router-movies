@@ -8,7 +8,7 @@ const Movie = props => {
   const [movie, setMovie] = useState();
   // const btn = document.querySelector(".save-button");
   const { id } = useParams();
-  // const id = props.match.params.id;
+  //! const id = props.match.params.id;
 
   const saveMovie = () => {
     const addToSavedList = props.save;
